@@ -7,9 +7,14 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int hitPoints = 5;
     [SerializeField] int currentHitPoints = 0;
-    void Start()
+    Enemy enemy;
+    void OnEnable()
     {
         currentHitPoints = hitPoints;
+    }
+    void Start()
+    {
+        enemy = GetComponent<Enemy>();
     }
 
     void Update()
@@ -27,7 +32,8 @@ public class EnemyHealth : MonoBehaviour
         currentHitPoints--;
         if(currentHitPoints <= Mathf.Epsilon)
         {
-            Destroy(gameObject);
+            enemy.GoldRewarded();
+            gameObject.SetActive(false);
         }
     }
 }

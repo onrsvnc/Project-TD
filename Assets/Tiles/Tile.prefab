@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c305b956c61bb7d438beb538445b857c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 9109513083071419066, guid: fa962b06fd7482740882acfa89ded82e, type: 3}
+  towerPrefab: {fileID: 5917448024401568199, guid: fa962b06fd7482740882acfa89ded82e, type: 3}
   isPlaceable: 1
 --- !u!65 &4566755450243519315
 BoxCollider:
@@ -181,7 +181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.57}
   m_SizeDelta: {x: 9, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4870187186879144974
