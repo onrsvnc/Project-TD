@@ -5,6 +5,7 @@ using TMPro;
 using System;
 
 [ExecuteAlways] 
+[RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLabeler : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.white;
@@ -13,10 +14,12 @@ public class CoordinateLabeler : MonoBehaviour
     TextMeshPro label;
     Vector2Int coordinates = new Vector2Int();
     Waypoint waypoint;
+
     void Awake()
     {
         label = GetComponent<TextMeshPro>();
-        label.enabled = false;
+        label.enabled = true;  //Change this before launch
+
         waypoint = GetComponentInParent<Waypoint>();
         DisplayCoordinates();
     }
@@ -28,22 +31,22 @@ public class CoordinateLabeler : MonoBehaviour
             UpdateObjectName();
         }
 
-        ColorCoordinates();
-        ToggleLabels();
+        SetLabelColor();
+        //ToggleLabels();
     }
 
-    void ToggleLabels()
-    {
-        if(Input.GetKey(KeyCode.C))
-        {
-            label.enabled = true;
-        }
-        else
-        {
-            label.enabled = false;
-        }
-    }
-    void ColorCoordinates()
+    // void ToggleLabels()
+    // {
+    //     if(Input.GetKey(KeyCode.C))
+    //     {
+    //         label.enabled = true;
+    //     }
+    //     else
+    //     {
+    //         label.enabled = false;
+    //     }
+    // }
+    void SetLabelColor()
     {
         if(waypoint.IsPlaceable)
         {
